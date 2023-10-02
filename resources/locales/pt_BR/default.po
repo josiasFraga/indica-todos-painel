@@ -129,6 +129,9 @@ msgstr "Início"
 msgid "Category"
 msgstr "Categoria"
 
+msgid "Service"
+msgstr "Serviço"
+
 msgid "Service Category"
 msgstr "Categoria"
 
@@ -147,5 +150,81 @@ msgstr "próxima"
 msgid "last"
 msgstr "última"
 
-msgid 'Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total'
-msgstr 'Página {{page}} de {{pages}}, mostrando {{current}} itens de um total de {{count}}'
+msgid "Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total"
+msgstr "Página {{page}} de {{pages}}, mostrando {{current}} itens de um total de {{count}}"
+
+msgid "Phone"
+msgstr "Telefone"
+
+msgid "Address"
+msgstr "Endereço"
+
+msgid "Address Number"
+msgstr "Nº"
+
+msgid "Address Complement"
+msgstr "Complemento"
+
+msgid "City"
+msgstr "Cidade"
+
+msgid "State"
+msgstr "Estado"
+
+msgid "Postal Code"
+msgstr "CEP"
+
+msgid "Neighborhood"
+msgstr "Bairro"
+
+msgid "Created"
+msgstr "Criado"
+
+msgid "Modified"
+msgstr "Alterado"
+
+msgid "Active Signature"
+msgstr "ID de Assinatura"
+
+
+msgid "Signature Status"
+msgstr "Status da Assinatura"
+
+msgid "Submit"
+msgstr "Salvar"
+
+msid "ServiceProviders"
+msgstr "Prestadores de Serviços"
+
+msid "Services"
+msgstr "Serviços"
+
+msgid "Title"
+msgstr "Título"
+
+msgid "Description"
+msgstr "Descrição"
+
+msgid "Category Id"
+msgstr "Categoria"
+
+msgid "Subcategory Id"
+msgstr "Subcategoria"
+
+msgid "Price Unit"
+msgstr "Unidade"
+
+msgid "Price"
+msgstr "Valor"
+
+msid "Users"
+msgstr "Usuários"
+
+msid "Subcategory"
+msgstr "Subcategoria"
+
+msid "Service Provider"
+msgstr "Prestador de Serviço"
+
+msid "Password"
+msgstr "Senha"

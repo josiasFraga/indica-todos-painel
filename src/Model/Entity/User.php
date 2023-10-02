@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 namespace App\Model\Entity;
+use Cake\Utility\Security;
 
 use Cake\ORM\Entity;
 
@@ -63,4 +64,9 @@ class User extends Entity
     protected $_hidden = [
         'password',
     ];
+    
+    protected function _setPassword(string $password)
+    {
+        return Security::hash($password, 'sha256', true);
+    }
 }

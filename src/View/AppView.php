@@ -39,5 +39,6 @@ class AppView extends View
     {
         $this->loadHelper('Form', ['className' => 'CakephpLte.Form']);
         $this->loadHelper('Paginator', ['templates' => 'CakephpLte.paginator-templates']);
+        $this->loadHelper('Localization.Localization');
     }
 }
