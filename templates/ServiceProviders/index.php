@@ -55,7 +55,16 @@
                   <td><?= h($serviceProvider->created) ?></td>
                   <td><?= h($serviceProvider->modified) ?></td>
                   <td><?= h($serviceProvider->active_signature) ?></td>
-                  <td><?= h($serviceProvider->signature_status == "CANCELLED" ? "Cancelada" : "Ativa") ?></td>
+                  <td>
+                  <?php 
+                  $signature_status = 'Ativa';
+                  if ( $serviceProvider->signature_status == "CANCELLED" ) {
+                    $signature_status = 'Cancelada';
+                  } else if ( $serviceProvider->signature_status == "TRIAL" ) {
+                    $signature_status = 'Período de Avaliação';                    
+                  }
+                  echo h($signature_status); 
+                  ?></td>
                   <td class="actions text-right">
                       <?= $this->Html->link(__('View'), ['action' => 'view', $serviceProvider->id], ['class'=>'btn btn-info btn-xs']) ?>
                       <?= $this->Html->link(__('Edit'), ['action' => 'edit', $serviceProvider->id], ['class'=>'btn btn-warning btn-xs']) ?>

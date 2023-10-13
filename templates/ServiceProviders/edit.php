@@ -37,7 +37,8 @@
                   'options' => [
                       null => 'Não Definido',
                       'ACTIVE' => 'Ativa',
-                      'CANCELLED' => 'Cancelada'
+                      'CANCELLED' => 'Cancelada',
+                      'TRIAL' => 'Avaliação'
                   ],
                   'empty' => '(Escolha uma opção)',  // Isso é opcional, mas é útil se você deseja adicionar um placeholder
                 ]);
