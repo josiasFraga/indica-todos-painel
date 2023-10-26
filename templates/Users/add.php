@@ -21,7 +21,7 @@
           <?php echo $this->Form->create($user, ['role' => 'form']); ?>
             <div class="card-body">
               <?php
-                echo $this->Form->control('service_provider_id', ['options' => $serviceProviders, 'empty' => true]);
+                echo $this->Form->control('service_provider_id', ['options' => $serviceProviders, 'empty' => true, 'label' => 'Empresa']);
                 echo $this->Form->control('name');
                 echo $this->Form->control('email');
                 echo $this->Form->control('cpf');

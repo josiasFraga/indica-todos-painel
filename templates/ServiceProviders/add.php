@@ -21,21 +21,21 @@
           <?php echo $this->Form->create($serviceProvider, ['role' => 'form']); ?>
             <div class="card-body">
               <?php
-                echo $this->Form->control('name');
-                echo $this->Form->control('email');
-                echo $this->Form->control('phone');
-                echo $this->Form->control('address');
-                echo $this->Form->control('address_number');
-                echo $this->Form->control('address_complement');
+                echo $this->Form->control('name', ['label' => 'Nome da Empresa']);
+                echo $this->Form->control('email',  ['label' => 'Email da Empresa']);
+                echo $this->Form->control('phone',  ['label' => 'Telefone da Empresa']);
+                echo $this->Form->control('address',  ['label' => 'Endereço da Empresa']);
+                echo $this->Form->control('address_number',  ['label' => 'Número da casa/prédio da Empresa']);
+                echo $this->Form->control('address_complement',  ['label' => 'Complemento do endereço da Empresa']);
                 echo $this->Localization->generateBasicLocation('col-md-6 col-xs-12', $serviceProvider->city, 'cities', false, 'select2bs4', $serviceProvider->state);
-                echo $this->Form->control('postal_code');
-                echo $this->Form->control('neighborhood');
+                echo $this->Form->control('postal_code',  ['label' => 'CEP da Empresa']);
+                echo $this->Form->control('neighborhood',  ['label' => 'Bairro da Empresa']);
                 echo $this->Form->control('active_signature');
                 echo $this->Form->control('signature_status', [
                   'type' => 'select',
                   'options' => [
                       null => 'Não Definido',
-                      'ACTIVE' => 'Ativa',
+                      //'ACTIVE' => 'Ativa',
                       'CANCELLED' => 'Cancelada',
                       'TRIAL' => 'Avaliação'
                   ],

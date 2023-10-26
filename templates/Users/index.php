@@ -31,7 +31,7 @@
             <thead>
               <tr>
                   <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('service_provider.name', 'Prestador') ?></th>
+                  <th scope="col"><?= $this->Paginator->sort('service_provider.name', 'Empresa') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('name') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('email') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('cpf') ?></th>

@@ -31,10 +31,10 @@
             <thead>
               <tr>
                   <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('service_provider_id') ?></th>
+                  <th scope="col"><?= $this->Paginator->sort('service_provider_id','Empresa') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('title') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('category_id') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('subcategory_id') ?></th>
+                  <th scope="col"><?= $this->Paginator->sort('subcategory_id', 'Subcategoria') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('price') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('price_unit') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('created') ?></th>

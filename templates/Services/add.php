@@ -24,8 +24,8 @@
                 echo $this->Form->control('title');
                 echo $this->Form->control('description');
                 echo $this->Form->control('category_id', ['options' => $serviceCategories]);
-                echo $this->Form->control('subcategory_id', ['options' => $serviceSubcategories]);
-                echo $this->Form->control('service_provider_id', ['options' => $serviceProviders]);
+                echo $this->Form->control('subcategory_id', ['options' => $serviceSubcategories, 'label' => 'Subcategoria']);
+                echo $this->Form->control('service_provider_id', ['options' => $serviceProviders, 'label' => 'Empresa']);
                 echo $this->Form->control('price');
                 echo $this->Form->control('price_unit');
               ?>
