@@ -66,7 +66,6 @@
                   echo h($signature_status); 
                   ?></td>
                   <td class="actions text-right">
-                      <?= $this->Html->link(__('View'), ['action' => 'view', $serviceProvider->id], ['class'=>'btn btn-info btn-xs']) ?>
                       <?= $this->Html->link(__('Edit'), ['action' => 'edit', $serviceProvider->id], ['class'=>'btn btn-warning btn-xs']) ?>
                       <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $serviceProvider->id], ['confirm' => __('Are you sure you want to delete # {0}?', $serviceProvider->id), 'class'=>'btn btn-danger btn-xs']) ?>
                   </td>

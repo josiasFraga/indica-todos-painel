@@ -101,11 +101,12 @@ class UsersTable extends Table
             ->maxLength('cpf', 14)
             ->allowEmptyString('cpf');
 
-        $validator
+            $validator
             ->scalar('password')
             ->maxLength('password', 255)
-            ->requirePresence('password', 'create')
-            ->notEmptyString('password');
+            ->requirePresence('password', 'create') // Exige a presença apenas na criação
+            ->notEmptyString('password', null, 'create') // Exige que não esteja vazia apenas na criação
+            ->allowEmptyString('password', 'update'); // Permite estar vazia na atualização
 
         $validator
             ->scalar('phone')

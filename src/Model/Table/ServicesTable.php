@@ -125,4 +125,24 @@ class ServicesTable extends Table
 
         return $rules;
     }
+
+    public function beforeSave(\Cake\Event\EventInterface $event, \Cake\Datasource\EntityInterface $entity, \ArrayObject $options)
+    {
+        if (isset($entity->price) && $entity->price) {
+            // Remove pontos de separação de milhares e substitui vírgula decimal por ponto
+            $entity->price = $this->convertToFloat($entity->price);
+        }
+
+        return true;
+    }
+
+    protected function convertToFloat($value)
+    {
+        // Primeiro, remova os pontos de separação de milhares
+        $value = str_replace('.', '', $value);
+        // Depois, substitua a vírgula por ponto
+        $value = str_replace(',', '.', $value);
+        // Converte a string para float
+        return (float) $value;
+    }
 }

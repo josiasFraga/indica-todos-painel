@@ -21,8 +21,8 @@
           <?php echo $this->Form->create($service, ['role' => 'form']); ?>
             <div class="card-body">
               <?php
-                echo $this->Form->control('title');
-                echo $this->Form->control('description');
+                echo $this->Form->control('title', ['label' => 'Nome do Serviço']);
+                echo $this->Form->control('description', ['label' => 'Descrição do Serviço']);
                 echo $this->Form->control('category_id', ['options' => $serviceCategories]);
                 echo $this->Form->control('subcategory_id', ['options' => $serviceSubcategories, 'label' => 'Subcategoria']);
                 echo $this->Form->control('service_provider_id', ['options' => $serviceProviders, 'label' => 'Empresa']);
