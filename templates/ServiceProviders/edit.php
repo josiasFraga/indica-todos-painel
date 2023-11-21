@@ -54,8 +54,8 @@
                 echo $this->Form->control('services[0].id', ['value' => $serviceProvider->services[0]['id'], 'type' => 'hidden']);
                 echo $this->Form->control('services[0].title', ['label' => 'Nome do Serviço', 'value' => $serviceProvider->services[0]['title']]);
                 echo $this->Form->control('services[0].description', ['label' => 'Descrição do Serviço', 'value' => $serviceProvider->services[0]['description']]);
-                echo $this->Form->control('services[0].category_id', ['options' => $serviceCategories]);
-                echo $this->Form->control('services[0].subcategory_id', ['options' => $serviceSubcategories, 'label' => 'Subcategoria']);
+                echo $this->Form->control('services[0].category_id', ['options' => $serviceCategories, 'default' => $serviceProvider->services[0]->category_id]);
+                echo $this->Form->control('services[0].subcategory_id', ['options' => $serviceSubcategories, 'label' => 'Subcategoria', 'default' => $serviceProvider->services[0]->subcategory_id]);
                 echo $this->Form->control('services[0].price', ['label' => 'Valor do Serviço', 'value' => $serviceProvider->services[0]['price'], 'class' => 'form-control price']);
                 echo $this->Form->control('services[0].price_unit', ['label' => 'Unidade', 'value' => $serviceProvider->services[0]['price_unit']]);
                 ?>

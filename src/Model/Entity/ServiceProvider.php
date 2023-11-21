@@ -14,7 +14,7 @@ use Cake\ORM\Entity;
  * @property string $phone
  * @property string $address
  * @property int $address_number
- * @property string $address_complement
+ * @property string|null $address_complement
  * @property string $city
  * @property string $state
  * @property string $postal_code

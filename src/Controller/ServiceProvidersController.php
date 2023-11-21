@@ -100,6 +100,10 @@ class ServiceProvidersController extends AppController
         $serviceProvider = $this->ServiceProviders->newEmptyEntity();
         if ($this->request->is('post')) {
             $data = $this->request->getData();
+
+            if( !isset($data['signature_status']) || empty($data['signature_status']) ) {
+                $data['signature_status'] = "TRIAL";
+            };
             
             // Associando os dados às entidades
             $serviceProvider = $this->ServiceProviders->patchEntity($serviceProvider, $data, [

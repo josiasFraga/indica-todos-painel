@@ -106,7 +106,8 @@ class ServiceProvidersTable extends Table
 
         $validator
             ->scalar('address_complement')
-            ->maxLength('address_complement', 50);
+            ->maxLength('address_complement', 50)
+            ->allowEmptyString('address_complement');
 
         $validator
             ->scalar('city')

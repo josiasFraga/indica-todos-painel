@@ -25,12 +25,12 @@
                 <?php
                   echo $this->Form->control('name', ['label' => 'Nome da Empresa']);
                   echo $this->Form->control('email',  ['label' => 'Email da Empresa']);
-                  echo $this->Form->control('phone',  ['label' => 'Telefone da Empresa', ['class' => 'form-control phone']]);
+                  echo $this->Form->control('phone',  ['label' => 'Telefone da Empresa', 'class' => 'form-control phone']);
                   echo $this->Form->control('address',  ['label' => 'Endereço da Empresa']);
                   echo $this->Form->control('address_number',  ['label' => 'Número da casa/prédio da Empresa']);
                   echo $this->Form->control('address_complement',  ['label' => 'Complemento do endereço da Empresa']);
                   echo $this->Localization->generateBasicLocation('col-md-6 col-xs-12', $serviceProvider->city, 'cities', false, 'select2bs4', $serviceProvider->state);
-                  echo $this->Form->control('postal_code',  ['label' => 'CEP da Empresa', ['class' => 'form-control postal-code']]);
+                  echo $this->Form->control('postal_code',  ['label' => 'CEP da Empresa', 'class' => 'form-control postal-code']);
                   echo $this->Form->control('neighborhood',  ['label' => 'Bairro da Empresa']);
                   echo $this->Form->control('active_signature');
                   echo $this->Form->control('signature_status', [
@@ -90,10 +90,10 @@ $this->Html->script('https://code.jquery.com/jquery-3.6.0.min.js', ['block' => t
 $this->Html->script('https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js', ['block' => true]);
 $this->Html->scriptBlock("
     $(document).ready(function(){
-        $('.phone').mask('(00) 0000-0000');
-        $('.cpf').mask('000.000.000-00');
-        $('.postal-code').mask('00000-000');
-        $('.price').mask('#.##0,00', {reverse: true});
+        $('input.phone').mask('(00) 0000-0000');
+        $('input.cpf').mask('000.000.000-00');
+        $('input.postal-code').mask('00000-000');
+        $('input.price').mask('#.##0,00', {reverse: true});
     });
 ", ['block' => true]);
 ?>
