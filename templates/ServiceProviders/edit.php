@@ -68,6 +68,22 @@
               <hr />
   
               <fieldset>
+                <legend>Galeria de Fotos</legend>
+                <div id="photo-gallery">
+                </div>
+                <?= $this->Form->button($this->Html->tag('i', '', ['class' => 'fa fa-upload']), [
+                    'type' => 'button', 
+                    'id' => 'enviar-foto', 
+                    'class' => 'btn btn-info', 
+                    'escapeTitle' => false
+                ]) ?>
+
+
+              </fieldset>
+
+              <hr />
+  
+              <fieldset>
                 <legend>Dados Do Usuário</legend>
                 <?php
                 echo $this->Form->control('users[0].id', ['value' => $serviceProvider->users[0]['id'], 'type' => 'hidden']);
@@ -90,9 +106,11 @@
   </div>
   <!-- /.row -->
 </section>
-
+<input type="file" name="field_file" id="field_file" style="display: none" accept="image/png, image/jpeg" />
 
 <?php
+$this->Html->scriptBlock("window.app_api_url='".env('APP_API_URL', false)."'", ['block' => true]);
+$this->Html->scriptBlock("window.service_provider_id='".$serviceProvider->id."'", ['block' => true]);
 $this->Html->script('https://code.jquery.com/jquery-3.6.0.min.js', ['block' => true]);
 $this->Html->script('https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js', ['block' => true]);
 $this->Html->scriptBlock("
@@ -126,4 +144,5 @@ $this->Html->scriptBlock("
         });
     });
 ", ['block' => true]);
+$this->Html->script('pages/ServiceProviders/edit.js', ['block' => true]);
 ?>

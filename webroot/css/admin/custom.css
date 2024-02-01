@@ -1,0 +1,50 @@
+
+#enviar-foto {
+    float: right; /* Alinha o botão à direita */
+    margin-right: 10px; /* Espaço à direita, ajuste conforme necessário */
+}
+
+.delete-photo-btn {
+    position: absolute;
+    top: 10px; /* Ajuste conforme necessário */
+    right: 10px; /* Ajuste conforme necessário */
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+
+#photo-gallery{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.image-container {
+
+    width: 20%;
+    height: 300px;
+    padding: 5px;
+    position: relative;
+    
+}
+
+.image-container_inner{
+    background-color: #f7f7f7;
+    
+    border-radius: 10px;
+ 
+    height: 290px;
+}
+
+
+.image-container img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    
+}
