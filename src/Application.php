@@ -84,6 +84,7 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
         $this->addPlugin('Authorization');
         $this->addPlugin('CakephpLte', ['autoload' => true, 'bootstrap' => true, 'routes' => true]);
         $this->addPlugin('Localization', ['bootstrap' => false, 'routes' => true]);
+        $this->addPlugin('Josegonzalez/Upload');
     }
 
     /**

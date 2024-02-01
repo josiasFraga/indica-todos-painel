@@ -7,13 +7,14 @@
     "require": {
         "php": ">=7.4",
         "ahmedebead/cakephp-4-lte": "^2.0",
+        "cakephp/authentication": "2.9",
+        "cakephp/authorization": "^2.3",
         "cakephp/cakephp": "^4.3",
         "cakephp/localized": "4.1.0",
         "cakephp/migrations": "^3.2",
         "cakephp/plugin-installer": "^1.3",
-        "mobiledetect/mobiledetectlib": "^2.8",
-        "cakephp/authentication": "2.9",
-        "cakephp/authorization": "^2.3"
+        "josegonzalez/cakephp-upload": "^7.0",
+        "mobiledetect/mobiledetectlib": "^2.8"
     },
     "require-dev": {
         "cakephp/bake": "^2.6",

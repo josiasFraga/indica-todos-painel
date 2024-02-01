@@ -133,9 +133,8 @@ class ServiceProvidersController extends AppController
         }
     
         $serviceCategories = $this->Services->ServiceCategories->find('list', ['limit' => 200]);
-        $serviceSubcategories = $this->Services->ServiceSubcategories->find('list', ['limit' => 200]);
 
-        $this->set(compact('serviceProvider', 'serviceCategories', 'serviceSubcategories'));
+        $this->set(compact('serviceProvider', 'serviceCategories'));
         
 
     }
@@ -172,9 +171,19 @@ class ServiceProvidersController extends AppController
 
             $this->Flash->error(__('The {0} could not be saved. Please, try again.', 'Service Provider'));
         }
+
+
+        $serviceSubcategories = [];
+
+        if ( is_array($serviceProvider->services) && count($serviceProvider->services) > 0 ){
+            $serviceSubcategories = $this->Services->ServiceSubcategories->find('list', [
+                'limit' => 200,
+                'conditions' => ['category_id' => $serviceProvider->services[0]['category_id']]
+            ]);
+
+        }
     
         $serviceCategories = $this->Services->ServiceCategories->find('list', ['limit' => 200]);
-        $serviceSubcategories = $this->Services->ServiceSubcategories->find('list', ['limit' => 200]);
 
         $this->set(compact('serviceProvider', 'serviceCategories', 'serviceSubcategories'));
     }

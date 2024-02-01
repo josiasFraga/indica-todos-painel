@@ -52,9 +52,9 @@
                 <legend>Dados Do Serviço</legend>
                 <?php
                 echo $this->Form->control('services[0].title', ['label' => 'Nome do Serviço']);
-                echo $this->Form->control('services[0].description', ['label' => 'Descrição do Serviço']);
+                echo $this->Form->control('services[0].description', ['label' => 'Descrição do Serviço', 'type' => 'textarea']);
                 echo $this->Form->control('services[0].category_id', ['options' => $serviceCategories]);
-                echo $this->Form->control('services[0].subcategory_id', ['options' => $serviceSubcategories, 'label' => 'Subcategoria']);
+                echo $this->Form->control('services[0].subcategory_id', ['options' => [], 'label' => 'Subcategoria']);
                 echo $this->Form->control('services[0].price', ['class' => 'form-control price']);
                 echo $this->Form->control('services[0].price_unit');
                 ?>
@@ -90,10 +90,35 @@ $this->Html->script('https://code.jquery.com/jquery-3.6.0.min.js', ['block' => t
 $this->Html->script('https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js', ['block' => true]);
 $this->Html->scriptBlock("
     $(document).ready(function(){
-        $('input.phone').mask('(00) 0000-0000');
+        $('input.phone').mask('(00) 00000-0000');
         $('input.cpf').mask('000.000.000-00');
         $('input.postal-code').mask('00000-000');
         $('input.price').mask('#.##0,00', {reverse: true});
+    });
+", ['block' => true]);
+
+$this->Html->scriptBlock("
+    $(document).ready(function(){
+        $('#services-0-category-id').on('change', function(){
+            var categoryId = $(this).val();
+            if(categoryId) {
+                $.ajax({
+                    url: '/service-subcategories/options/' + categoryId + '.json',
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(data) {
+                        $('#services-0-subcategory-id').empty();
+                        $.each(data, function(key, value) {
+                            $('#services-0-subcategory-id').append('<option value=' + key + '>' + value + '</option>');
+                        });
+                    }
+                });
+            } else {
+                $('#services-0-subcategory-id').empty();
+            }
+        });
+
+        $('#services-0-category-id').trigger('change');
     });
 ", ['block' => true]);
 ?>

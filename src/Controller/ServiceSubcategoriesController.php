@@ -134,4 +134,19 @@ class ServiceSubcategoriesController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    public function options($categoryId)
+    {
+        $subcategories = $this->ServiceSubcategories->find('list', [
+            'conditions' => ['category_id' => (int)$categoryId],
+            'keyField' => 'id',
+            'valueField' => 'name'
+        ]);
+
+        $subcategories = $subcategories->toArray();
+
+        return $this->response->withType('application/json')
+        ->withStringBody(json_encode($subcategories));
+
+    }
 }

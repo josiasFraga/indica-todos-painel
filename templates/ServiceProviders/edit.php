@@ -53,7 +53,11 @@
                 <?php
                 echo $this->Form->control('services[0].id', ['value' => $serviceProvider->services[0]['id'], 'type' => 'hidden']);
                 echo $this->Form->control('services[0].title', ['label' => 'Nome do Serviço', 'value' => $serviceProvider->services[0]['title']]);
-                echo $this->Form->control('services[0].description', ['label' => 'Descrição do Serviço', 'value' => $serviceProvider->services[0]['description']]);
+                echo $this->Form->control('services[0].description', [
+                  'label' => 'Descrição do Serviço',
+                  'type' => 'textarea',
+                  'value' => $serviceProvider->services[0]['description']
+                ]);
                 echo $this->Form->control('services[0].category_id', ['options' => $serviceCategories, 'default' => $serviceProvider->services[0]->category_id]);
                 echo $this->Form->control('services[0].subcategory_id', ['options' => $serviceSubcategories, 'label' => 'Subcategoria', 'default' => $serviceProvider->services[0]->subcategory_id]);
                 echo $this->Form->control('services[0].price', ['label' => 'Valor do Serviço', 'value' => $serviceProvider->services[0]['price'], 'class' => 'form-control price']);
@@ -93,10 +97,33 @@ $this->Html->script('https://code.jquery.com/jquery-3.6.0.min.js', ['block' => t
 $this->Html->script('https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js', ['block' => true]);
 $this->Html->scriptBlock("
     $(document).ready(function(){
-        $('.phone').mask('(00) 0000-0000');
+        $('.phone').mask('(00) 00000-0000');
         $('.cpf').mask('000.000.000-00');
         $('.postal-code').mask('00000-000');
         $('.price').mask('#.##0,00', {reverse: true});
+    });
+", ['block' => true]);
+
+$this->Html->scriptBlock("
+    $(document).ready(function(){
+        $('#services-0-category-id').on('change', function(){
+            var categoryId = $(this).val();
+            if(categoryId) {
+                $.ajax({
+                    url: '/service-subcategories/options/' + categoryId + '.json',
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(data) {
+                        $('#services-0-subcategory-id').empty();
+                        $.each(data, function(key, value) {
+                            $('#services-0-subcategory-id').append('<option value=' + key + '>' + value + '</option>');
+                        });
+                    }
+                });
+            } else {
+                $('#services-0-subcategory-id').empty();
+            }
+        });
     });
 ", ['block' => true]);
 ?>
